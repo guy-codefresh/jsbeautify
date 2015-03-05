@@ -15,7 +15,7 @@ There are 2 options of how to run and try out this plugin.
 ## Using [Codefresh Labs](http://www.codefresh.io/labs)
 - View or make any change to the plug-in implementation in the index.html file
 - Click on the run button to host your plug-in in the server ![Run](/img/run.png)
-- Open the URL to the plug-in (you need the URL to install the plug-in) ![Open URL](/img/openurl.png)
+- Open the URL to the plug-in (you need the URL to install the plug-in) ![Open URL](https://www.dropbox.com/s/ycstmrn4tn4jxnx/openurl.png?dl=0)
 - In the opened URL you can either 
 --Click on the 'install in caodefresh' to install the plug-in on the codefresh. The link will take you tot he codeffresh ide setting. install the plug-in then refresh your IDE
 --Copy the URL and open any Orion setting page and install the plug-in using the copied URL
