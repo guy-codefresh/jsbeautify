@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>TODO List</title>
+    <script src="js/plugin.js"></script>
+    <script>
+
+        var headers = {
+            name: "BeautifyPlugin", version: "1.0", description: "Beautify editor code."
+        };
+
+        var provider = new orion.PluginProvider(headers);
+
+        provider.registerServiceProvider("orion.edit.outliner", {
+            getOutline: function(contents, title) {
+                var outline = [];
+                var lines = contents.split(/\r?\n/);
+                for (var i=0; i < lines.length; i++) {
+                    var line = lines[i];
+                    var match = /^=\s*(.+?)\s*=$/.exec(line);
+                    if (match) {
+                        outline.push({
+                            label: match[1],
+                            line: i+1  // lines are numbered from 1
+                        });
+                    }
+                }
+                return outline;
+            }
+        }, {
+            name: "Headings",
+            id: "orion.outliner.example.headings"
+        });
+
+
+        provider.connect();
+
+    </script>
+</head>
+<body>
+<h1>TODO List</h1>
+</body>
+</html>
