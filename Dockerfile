@@ -13,6 +13,7 @@ EXPOSE 80
 EXPOSE 9000
 #node inspector port
 EXPOSE 8080
+EXPOSE 8585
 
 COPY . /src
 
