@@ -11,4 +11,9 @@ var server = app.listen(9000, function () {
 
   console.log('Example app listening at http://%s:%s', host, port);
 
+  var count = 1;
+  setInterval(function() {
+    console.log('Count >> ' + count);
+    count++;
+  }, 300)
 });
