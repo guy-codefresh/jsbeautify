@@ -15,5 +15,5 @@ var server = app.listen(9000, function () {
   setInterval(function() {
     console.log('Count >> ' + count);
     count++;
-  }, 300)
+  }, 2000)
 });
