@@ -12,7 +12,7 @@ var server = app.listen(9000, function () {
   console.log('Example app listening at http://%s:%s', host, port);
 
   var count = 1;
-  for (count<3000; count++) {
+  for (;count<3000; count++) {
       console.log('Count >> ' + count);
   }
   setInterval(function() {
