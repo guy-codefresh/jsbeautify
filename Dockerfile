@@ -1,19 +1,14 @@
-FROM ubuntu:14.04
+FROM codefresh/buildpacks:all
 
-RUN sudo apt-get -q -y update
-RUN sudo apt-get -q -y install nodejs npm git
+ENV NVM_BIN /root/.nvm/versions/node/v0.12.7/bin
+ENV PATH $NVM_BIN:$PATH
 
-RUN sudo ln -s "$(which nodejs)" /usr/bin/node
-
-RUN npm install npm -g
-
-#application server
-EXPOSE 80
-#nodejs debug port
-EXPOSE 9000
-#node inspector port
-EXPOSE 8080
+COPY package.json /src/package.json
+WORKDIR /src
+RUN npm install
 
 COPY . /src
 
-CMD ["/usr/bin/node", "/src/app.js"]
+EXPOSE 9000
+
+CMD ["node", "/src/app.js"]

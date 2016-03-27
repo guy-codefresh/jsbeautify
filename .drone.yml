@@ -1,0 +1,4 @@
+build:
+  image: node:0.10-onbuild
+  commands:
+    - npm install
